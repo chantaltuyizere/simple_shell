@@ -1,24 +1,33 @@
-# This code will calculate the factorial of a number
+#include <stdio.h>
 
-def factorial(n):
-  """
-  Calculates the factorial of a number.
+/**
+ * factorial - Calculates the factorial of a number.
+ * @n: The number to calculate the factorial of.
+ *
+ * Return: The factorial of n.
+ */
+int factorial(int n)
+{
+	if (n == 0)
+		return (1);
+	else
+		return (n * factorial(n - 1));
+}
 
-  Args:
-    n: The number to calculate the factorial of.
+/**
+ * main - Entry point of the program.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	int number;
 
-  Returns:
-    The factorial of n.
-  """
+	printf("Enter a number: ");
+	scanf("%d", &number);
 
-  if n == 0:
-    return 1
-  else:
-    return n * factorial(n - 1)
+	printf("The factorial of %d is %d\n", number, factorial(number));
 
+	return (0);
+}
 
-# This code will ask the user for a number and then print its factorial
-
-number = int(input("Enter a number: "))
-
-print("The factorial of {} is {}".format(number, factorial(number)))
